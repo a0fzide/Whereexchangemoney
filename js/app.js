@@ -1,6 +1,6 @@
 var app = angular.module('WhereExchangeMoney', ['ngMaterial','ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     
     $stateProvider
     
@@ -13,3 +13,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 })
+
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+    .accentPalette('amber')
+    .warnPalette('indigo');
+});
