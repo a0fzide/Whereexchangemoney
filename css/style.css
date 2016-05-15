@@ -7,3 +7,6 @@
 .padding0 {
     padding: 0px;
 }
+.md-subheader ._md-subheader-inner {
+    padding: 0px;
+}

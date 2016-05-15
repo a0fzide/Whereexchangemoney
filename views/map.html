@@ -13,7 +13,12 @@
           <span>Where Exchange Money</span>
         </h4>
       </div>
-            <div class="md-toolbar-tools md-toolbar-tools-bottom padding0" layout="row" layout-align="space-between center">
+    </md-toolbar>
+ 
+ 
+        <section>
+      <md-subheader class="md-primary">
+          <div class="md-toolbar-tools md-toolbar-tools-bottom padding0" layout="row" layout-align="space-between center">
             <div layout="row" flex layout-align="center center">
                 <md-input-container ng-show="buying" class="margin0" ng-class="{'animated fadeIn': buying}">
         <label ng-hide="selectedFrom != ''">From</label>
@@ -76,7 +81,22 @@
       </md-input-container>
             </div>
       </div>
-    </md-toolbar>
+          </md-subheader>
+      <md-list layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in [1, 2, 3, 4, 5, 6, 7, 8]">
+            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+            <div class="md-list-item-text">
+              <h3>{{message}}</h3>
+              <h4>{{message}}</h4>
+              <p>
+                {{message}}
+              </p>
+            </div>
+        </md-list-item>
+      </md-list>
+    </section>
+ 
+ 
  
             </md-content>
     </div>
