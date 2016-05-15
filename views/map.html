@@ -40,7 +40,7 @@
       </md-input-container>
             </div>
             <div>
-                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated rotateIn': buying, 'animated rubberBand': !buying}">
+                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated jello': buying, 'animated rubberBand': !buying}">
             <md-icon> <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Network/data_in_both_directions-25.png" title="Data in Both Directions" width="25"></md-icon>
           </md-button>
                 </div>
@@ -121,7 +121,7 @@
             </md-content>
     </div>
     <div hide-xs hide-sm flex layout-fill>
-        <ng-map zoom="10" center="bangkok, thailand" style="position:relative;height:100%;">
+        <ng-map zoom="10" center="bangkok, thailand" map-type-control="false" street-view-control="false" style="position:relative;height:100%;">
 
             <marker ng-repeat="nearbyShop in nearbyShops"
             animation="Animation.DROP"
@@ -194,7 +194,7 @@
       </md-input-container>
             </div>
             <div>
-                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated rotateIn': buying, 'animated rubberBand': !buying}">
+                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated jello': buying, 'animated rubberBand': !buying}">
             <md-icon> <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Network/data_in_both_directions-25.png" title="Data in Both Directions" width="25"></md-icon>
           </md-button>
                 </div>
@@ -229,7 +229,7 @@
       </div>
           </md-subheader>
               <div hide-gt-sm flex>
-        <ng-map zoom="10" center="bangkok, thailand" style="">
+        <ng-map zoom="10" center="bangkok, thailand" map-type-control="false" street-view-control="false" style="">
 
             <marker ng-repeat="nearbyShop in nearbyShops"
             animation="Animation.DROP"

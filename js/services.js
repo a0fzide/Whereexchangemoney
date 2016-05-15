@@ -120,7 +120,7 @@ app.factory('Shops', function() {
     long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/statue-48.png'
   }, {
-    id: 6,
+    id: 5,
     name: 'Bank of Korea',
     fee: 'No fee',
     buying: 22.21,
@@ -129,7 +129,7 @@ app.factory('Shops', function() {
     long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/obelisk-48.png'
   }, {
-    id: 7,
+    id: 6,
     name: 'Bank of Japan',
     fee: 'No fee',
     buying: 22.11,
@@ -138,7 +138,7 @@ app.factory('Shops', function() {
     long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/monument-48.png'
   }, {
-    id: 8,
+    id: 7,
     name: 'Bank of Brazil',
     fee: 'No fee',
     buying: 22.51,
@@ -147,7 +147,7 @@ app.factory('Shops', function() {
     long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/modern_statue-48.png'
   }, {
-    id: 9,
+    id: 8,
     name: 'Bank of Spain',
     fee: 'No fee',
     buying: 22.25,
@@ -156,7 +156,7 @@ app.factory('Shops', function() {
     long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/city_hall-48.png'
   }, {
-    id: 10,
+    id: 9,
     name: 'Bank of Canada',
     fee: 'No fee',
     buying: 22.23,
@@ -240,7 +240,7 @@ app.factory('ExchangeRates', function() {
         perUnit: 'THB / 1'
     }
   }, {
-    id: 6,
+    id: 5,
     name: 'Bank of Korea',
     fee: 'No fee',
     rate: {   
@@ -249,7 +249,7 @@ app.factory('ExchangeRates', function() {
         perUnit: 'THB / 1'
     }
   }, {
-    id: 7,
+    id: 6,
     name: 'Bank of Japan',
     fee: 'No fee',
     rate: {   
@@ -258,7 +258,7 @@ app.factory('ExchangeRates', function() {
         perUnit: 'THB / 1'
     }
   }, {
-    id: 8,
+    id: 7,
     name: 'Bank of Brazil',
     fee: 'No fee',
     rate: {   
@@ -267,7 +267,7 @@ app.factory('ExchangeRates', function() {
         perUnit: 'THB / 1'
     }
   }, {
-    id: 9,
+    id: 8,
     name: 'Bank of Spain',
     fee: 'No fee',
     rate: {   
@@ -276,7 +276,7 @@ app.factory('ExchangeRates', function() {
         perUnit: 'THB / 1'
     }
   }, {
-    id: 3,
+    id: 9,
     name: 'Bank of Canada',
     fee: 'No fee',
     rate: {   
