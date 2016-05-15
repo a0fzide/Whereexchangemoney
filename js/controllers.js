@@ -14,6 +14,8 @@ app.controller('mapCtrl', function($scope, CurrenciesFrom, CurrenciesTo, Shops, 
         $scope.selectedTo = $scope.exchangeTo[0];
         // console.log($scope.selectedFrom);
     }, 500);
+    $timeout(function() {
     $scope.nearbyShops = Shops.nearby(13.7251097,100.352913);
     console.log($scope.nearbyShops);
+    }, 2500);
 });

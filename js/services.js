@@ -172,8 +172,8 @@ app.factory('Shops', function() {
     },
     nearby: function(lat,long) {
       for (var i = 0; i < shops.length; i++) {
-        shops[i].lat = lat + (Math.random() - 0.5);
-        shops[i].long = long + (Math.random() - 0.5);
+        shops[i].lat = lat + (Math.random()*(0.5) - 0.175);
+        shops[i].long = long + (Math.random()*(0.5) - 0.175);
         // console.log(Math.random() - 0.5);
       }
       return shops;
