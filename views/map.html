@@ -48,7 +48,7 @@
       </md-input-container>
             </div>
             <div>
-                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated rotateIn': buying, 'animated rotateInDownLeft': !buying}">
+                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated rotateIn': buying, 'animated rubberBand': !buying}">
             <md-icon> <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Network/data_in_both_directions-25.png" title="Data in Both Directions" width="25"></md-icon>
           </md-button>
                 </div>
@@ -82,15 +82,33 @@
             </div>
       </div>
           </md-subheader>
-      <md-list layout-padding>
-        <md-list-item class="md-3-line" ng-repeat="message in [1, 2, 3, 4, 5, 6, 7, 8]">
-            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-            <div class="md-list-item-text">
-              <h3>{{message}}</h3>
-              <h4>{{message}}</h4>
+      <md-list>
+        <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in shops" style="padding: 0 8px;">
+            <div flex="100" layout="row" layout-align="space-between center">
+            <img ng-src="{{shop.icon}}" title="Shop" width="48" class="md-avatar" style="margin-right:8px;">
+            <div flex class="md-list-item-text">
+              <h3>{{shop.name}}</h3>
+              <!--<h4>{{message}}</h4>-->
               <p>
-                {{message}}
+                12.5 km | {{shop.fee}}
               </p>
+            </div>
+            <div  style="width:110px;">
+            <div class="md-list-item-text" ng-show="buying" ng-class="{'animated fadeIn': buying}" layout="column" layout-align="center center">
+              <h5 class="margin0">Buying Rate</h5>
+              <h2 class="margin0 mdc-text-teal">{{exchangeRates[shop.id].rate.buying | number:2}}</h2>
+              <p>
+                {{selectedFrom.name}} / 1 {{selectedTo.name}}
+              </p>
+            </div>
+            <div class="md-list-item-text" ng-show="!buying" ng-class="{'animated fadeIn': !buying}" layout="column" layout-align="center center">
+              <h5 class="margin0">Selling Rate</h5>
+              <h2 class="margin0 mdc-text-red">{{exchangeRates[shop.id].rate.selling | number:2}}</h2>
+              <p>
+                {{selectedFrom.name}} / 1 {{selectedTo.name}}
+              </p>
+            </div>
+            </div>
             </div>
         </md-list-item>
       </md-list>
