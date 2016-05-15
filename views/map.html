@@ -1,6 +1,7 @@
 
 <div hide-xs hide-sm layout="column" ng-cloak style="height:100%;width:320px;">
-        <md-toolbar  class="" style="min-width:320px;max-width:480px;">
+    <!--<div>-->
+        <md-toolbar  class="md-tall" style="min-width:320px;max-width:480px;">
       <div class="md-toolbar-tools" layout="row">
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon><img src="https://maxcdn.icons8.com/Color/PNG/24/Business/currency_exchange-24.png" title="Currency Exchange" width="24"></md-icon>
@@ -9,9 +10,7 @@
           <span>Where Exchange Money</span>
         </h4>
       </div>
-      
-    </md-toolbar>
-     <md-subheader class="md-primary" style="width:320px;" >
+      <md-subheader class="md-primary md-toolbar-tools-bottom" style="width:320px;" >
           <div class="md-toolbar-tools md-toolbar-tools-bottom padding0" layout="row" layout-align="space-between center">
             <div layout="row" flex layout-align="center center">
                 <md-input-container ng-show="buying" class="margin0" ng-class="{'animated fadeIn': buying}">
@@ -75,7 +74,10 @@
       </md-input-container>
             </div>
       </div>
-          </md-subheader>        
+          </md-subheader>
+    </md-toolbar>
+     
+    <!--</div>        -->
         <md-content layout="row" layout-align="start start">
         <div layout="column" layout-fill style="width:320px;">    
 
