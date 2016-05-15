@@ -85,14 +85,13 @@
         <section>
       
       <md-list>
-        <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in shops" style="padding: 0 8px;">
+        <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in nearbyShops | orderBy:['range','buying','-selling']" style="padding: 0 8px;">
             <div flex="100" class="padding-top8" layout="row" layout-align="space-between center">
             <img ng-src="{{shop.icon}}" title="Shop" width="48" class="md-avatar" style="margin-right:8px;">
             <div flex class="md-list-item-text">
               <h3>{{shop.name}}</h3>
-              <!--<h4>{{message}}</h4>-->
               <p>
-                12.5 km | {{shop.fee}}
+                {{shop.range | number:2}} km | {{shop.fee}}
               </p>
             </div>
             <div  style="width:110px;">
@@ -244,7 +243,7 @@
             
     </div>
       <md-list>
-        <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in shops" style="padding: 0 8px;">
+        <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in nearbyShops | orderBy:['range','buying','-selling']" style="padding: 0 8px;">
             <div flex="100" layout="row" layout-align="center center">
             <div flex="100" class="padding-top8" layout="row" layout-align="space-between center" style="max-width:480px;">
             <img ng-src="{{shop.icon}}" title="Shop" width="48" class="md-avatar" style="margin-right:8px;">
@@ -252,7 +251,7 @@
               <h3>{{shop.name}}</h3>
               <!--<h4>{{message}}</h4>-->
               <p>
-                12.5 km | {{shop.fee}}
+                {{shop.range | number:2 }} km | {{shop.fee}}
               </p>
             </div>
             <div  style="width:110px;">

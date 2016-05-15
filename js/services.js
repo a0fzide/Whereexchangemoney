@@ -82,6 +82,7 @@ app.factory('Shops', function() {
     selling: 22.44,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/lion_statue-48.png'
   }, {
     id: 1,
@@ -91,6 +92,7 @@ app.factory('Shops', function() {
     selling: 22.46,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/statue_of_liberty-48.png'
   }, {
     id: 2,
@@ -100,6 +102,7 @@ app.factory('Shops', function() {
     selling: 22.34,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/museum-48.png'
   }, {
     id: 3,
@@ -109,6 +112,7 @@ app.factory('Shops', function() {
     selling: 22.34,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/us_capitol-48.png'
   }, {
     id: 4,
@@ -118,6 +122,7 @@ app.factory('Shops', function() {
     selling: 22.34,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/statue-48.png'
   }, {
     id: 5,
@@ -127,6 +132,7 @@ app.factory('Shops', function() {
     selling: 22.35,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/obelisk-48.png'
   }, {
     id: 6,
@@ -136,6 +142,7 @@ app.factory('Shops', function() {
     selling: 22.34,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/monument-48.png'
   }, {
     id: 7,
@@ -145,6 +152,7 @@ app.factory('Shops', function() {
     selling: 22.74,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/modern_statue-48.png'
   }, {
     id: 8,
@@ -154,6 +162,7 @@ app.factory('Shops', function() {
     selling: 22.34,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/city_hall-48.png'
   }, {
     id: 9,
@@ -163,6 +172,7 @@ app.factory('Shops', function() {
     selling: 22.46,
     lat: 0,
     long: 0,
+    range: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/embassy-48.png'
   }];
 
@@ -175,6 +185,24 @@ app.factory('Shops', function() {
         shops[i].lat = lat + (Math.random()*(0.5) - 0.175);
         shops[i].long = long + (Math.random()*(0.5) - 0.175);
         // console.log(Math.random() - 0.5);
+        shops[i].range = getDistanceFromLatLonInKm(lat,long,shops[i].lat,shops[i].long);
+        console.log(shops[i].range);
+        function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+        var R = 6371; // Radius of the earth in km
+        var dLat = deg2rad(lat2-lat1);  // deg2rad below
+        var dLon = deg2rad(lon2-lon1);
+        var a =
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c; // Distance in km
+        return d;
+        }
+
+        function deg2rad(deg) {
+        return deg * (Math.PI/180)
+        }
       }
       return shops;
     },
