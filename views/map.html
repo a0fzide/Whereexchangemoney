@@ -16,13 +16,13 @@
             <div class="md-toolbar-tools md-toolbar-tools-bottom padding0" layout="row" layout-align="space-between center">
             <div layout="row" flex layout-align="center center">
                 <md-input-container class="margin0">
-        <label ng-hide="selectFrom.length > 0">From</label>
+        <label ng-hide="selectedFrom.length > 0">From</label>
         <md-select flex ng-model="selectedFrom">
           <md-optgroup label="From">
-            <md-option ng-value="item" ng-repeat="item in items">
+            <md-option ng-value="currencyFrom" ng-repeat="currencyFrom in exchangeFrom">
                 <div layout="row" layout-align="center center">
-                <img src="https://maxcdn.icons8.com/Color/PNG/24/Ecommerce/turkish_lira-24.png" title="Turkish Lira" width="24">
-                    <span><h5 class="margin0">Item {{item}}</h5></span>
+                <img ng-src="{{currencyFrom.icon}}" title="{{currencyFrom.name}}" width="24">
+                    <span><h5 class="margin0">{{currencyFrom.name}}</h5></span>
                 </div>
                 </md-option>
           </md-optgroup>
@@ -36,13 +36,13 @@
                 </div>
             <div layout="row" flex layout-align="center center">
                 <md-input-container class="margin0">
-        <label ng-hide="selectTo.length > 0">To</label>
+        <label ng-hide="selectedTo.length > 0">To</label>
         <md-select flex ng-model="selectedTo">
           <md-optgroup label="To">
-            <md-option ng-value="item" ng-repeat="item in items">
+            <md-option ng-value="currencyTo" ng-repeat="currencyTo in exchangeTo">
                 <div layout="row" layout-align="center center">
-                <img src="https://maxcdn.icons8.com/Color/PNG/24/Ecommerce/turkish_lira-24.png" title="Turkish Lira" width="24">
-                    <span><h5 class="margin0">Item {{item}}</h5></span>
+                <img ng-src="{{currencyTo.icon}}" title="{{currencyTo.name}}" width="24">
+                    <span><h5 class="margin0">{{currencyTo.name}}</h5></span>
                 </div>
                 </md-option>
           </md-optgroup>
