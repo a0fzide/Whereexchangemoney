@@ -1,4 +1,4 @@
-var app = angular.module('WhereExchangeMoney', ['ngMaterial','ui.router']);
+var app = angular.module('WhereExchangeMoney', ['ngMaterial','ui.router','ngMap']);
 
 app.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     

@@ -1,5 +1,7 @@
-app.controller('mapCtrl', function($scope, CurrenciesFrom, CurrenciesTo, Shops, ExchangeRates, $timeout) {
+app.controller('mapCtrl', function($scope, CurrenciesFrom, CurrenciesTo, Shops, ExchangeRates, $timeout, $window) {
+    
     $scope.buying = true;
+    
     $scope.exchangeFrom = CurrenciesFrom.all();
     $scope.exchangeTo = CurrenciesTo.all();
     // console.log($scope.exchangeFrom);

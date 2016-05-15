@@ -1,6 +1,5 @@
 
 <div hide-xs hide-sm layout="column" ng-cloak style="height:100%;width:320px;">
-    <!--<div>-->
         <md-toolbar  class="md-tall" style="min-width:320px;max-width:480px;">
       <div class="md-toolbar-tools" layout="row">
         <md-button class="md-icon-button" aria-label="Settings">
@@ -77,7 +76,6 @@
           </md-subheader>
     </md-toolbar>
      
-    <!--</div>        -->
         <md-content layout="row" layout-align="start start">
         <div layout="column" layout-fill style="width:320px;">    
 
@@ -122,7 +120,14 @@
         </div>
             </md-content>
     </div>
-    <div hide-xs hide-sm flex>ABC</div>
+    <div hide-xs hide-sm flex layout-fill>
+        <ng-map zoom="10" center="bangkok, thailand" style="position:relative;height:100%;">
+            <marker position="bangkok, thailand"
+            icon="https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png"></marker>
+            <!--13.7251097,100.352913    -->
+        </ng-map>
+            
+    </div>
 
     
     
