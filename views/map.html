@@ -1,7 +1,7 @@
 <div layout="row" layout-fill>
     
     <!--small screen xs-->
-    <div layout="column" layout-fill ng-cloak>
+    <div hide-gt-sm layout="column" layout-fill ng-cloak>
         <md-content>
             
         <md-toolbar  class="" md-scroll-shrink>
@@ -9,14 +9,14 @@
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon><img src="https://maxcdn.icons8.com/Color/PNG/24/Business/currency_exchange-24.png" title="Currency Exchange" width="24"></md-icon>
         </md-button>
-        <h5>
+        <h4>
           <span>Where Exchange Money</span>
-        </h5>
+        </h4>
       </div>
             <div class="md-toolbar-tools md-toolbar-tools-bottom padding0" layout="row" layout-align="space-between center">
             <div layout="row" flex layout-align="center center">
-                <md-input-container class="margin0">
-        <label ng-hide="selectedFrom.length > 0">From</label>
+                <md-input-container ng-show="buying" class="margin0" ng-class="{'animated fadeIn': buying}">
+        <label ng-hide="selectedFrom != ''">From</label>
         <md-select flex ng-model="selectedFrom">
           <md-optgroup label="From">
             <md-option ng-value="currencyFrom" ng-repeat="currencyFrom in exchangeFrom">
@@ -28,21 +28,47 @@
           </md-optgroup>
         </md-select>
       </md-input-container>
-            </div>
-            <div>
-            <md-button md-no-ink class="md-icon-button" aria-label="Swap">
-        <md-icon><img src="https://maxcdn.icons8.com/iOS7/PNG/25/Network/data_in_both_directions-25.png" title="Data in Both Directions" width="25"></md-icon>
-      </md-button> 
-                </div>
-            <div layout="row" flex layout-align="center center">
-                <md-input-container class="margin0">
-        <label ng-hide="selectedTo.length > 0">To</label>
+      <md-input-container ng-show="!buying" class="margin0" ng-class="{'animated fadeIn': !buying}">
+        <label ng-hide="selectedTo != ''">To</label>
         <md-select flex ng-model="selectedTo">
           <md-optgroup label="To">
             <md-option ng-value="currencyTo" ng-repeat="currencyTo in exchangeTo">
                 <div layout="row" layout-align="center center">
                 <img ng-src="{{currencyTo.icon}}" title="{{currencyTo.name}}" width="24">
                     <span><h5 class="margin0">{{currencyTo.name}}</h5></span>
+                </div>
+                </md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+            </div>
+            <div>
+                <md-button aria-label="Swap" class="md-primary margin0 padding0" style="min-width:40px;" ng-click="buying = !buying" ng-class="{'animated rotateIn': buying, 'animated rotateInDownLeft': !buying}">
+            <md-icon> <img src="https://maxcdn.icons8.com/iOS7/PNG/25/Network/data_in_both_directions-25.png" title="Data in Both Directions" width="25"></md-icon>
+          </md-button>
+                </div>
+            <div layout="row" flex layout-align="center center">
+                <md-input-container ng-show="buying" class="margin0" ng-class="{'animated fadeIn': buying}">
+        <label ng-hide="selectedTo != ''">To</label>
+        <md-select flex ng-model="selectedTo">
+          <md-optgroup label="To">
+            <md-option ng-value="currencyTo" ng-repeat="currencyTo in exchangeTo">
+                <div layout="row" layout-align="center center">
+                <img ng-src="{{currencyTo.icon}}" title="{{currencyTo.name}}" width="24">
+                    <span><h5 class="margin0">{{currencyTo.name}}</h5></span>
+                </div>
+                </md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+      <md-input-container ng-show="!buying" class="margin0" ng-class="{'animated fadeIn': !buying}">
+        <label ng-hide="selectedFrom != ''">From</label>
+        <md-select flex ng-model="selectedFrom">
+          <md-optgroup label="From">
+            <md-option ng-value="currencyFrom" ng-repeat="currencyFrom in exchangeFrom">
+                <div layout="row" layout-align="center center">
+                <img ng-src="{{currencyFrom.icon}}" title="{{currencyFrom.name}}" width="24">
+                    <span><h5 class="margin0">{{currencyFrom.name}}</h5></span>
                 </div>
                 </md-option>
           </md-optgroup>
