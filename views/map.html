@@ -121,8 +121,13 @@
             </md-content>
     </div>
     <div hide-xs hide-sm flex layout-fill>
-        <ng-map zoom="10" center="bangkok, thailand" style="position:relative;height:100%;">
-            <marker position="bangkok, thailand"
+        <ng-map zoom="9" center="bangkok, thailand" style="position:relative;height:100%;">
+
+            <marker ng-repeat="nearbyShop in nearbyShops"
+            position="{{nearbyShop.lat}}, {{nearbyShop.long}}"
+            icon="{{nearbyShop.icon}}">
+            </marker>
+                        <marker position="bangkok, thailand"
             icon="https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png"></marker>
             <!--13.7251097,100.352913    -->
         </ng-map>
@@ -221,6 +226,19 @@
             </div>
       </div>
           </md-subheader>
+              <div hide-gt-sm flex>
+        <ng-map zoom="9" center="bangkok, thailand" style="">
+
+            <marker ng-repeat="nearbyShop in nearbyShops"
+            position="{{nearbyShop.lat}}, {{nearbyShop.long}}"
+            icon="{{nearbyShop.icon}}">
+            </marker>
+                        <marker position="bangkok, thailand"
+            icon="https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png"></marker>
+            <!--13.7251097,100.352913    -->
+        </ng-map>
+            
+    </div>
       <md-list>
         <md-list-item md-ink-ripple class="md-3-line animated fadeIn" ng-repeat="shop in shops" style="padding: 0 8px;">
             <div flex="100" layout="row" layout-align="center center">

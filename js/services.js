@@ -80,6 +80,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.22,
     selling: 22.44,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/lion_statue-48.png'
   }, {
     id: 1,
@@ -87,6 +89,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.24,
     selling: 22.46,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/statue_of_liberty-48.png'
   }, {
     id: 2,
@@ -94,6 +98,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.21,
     selling: 22.34,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/museum-48.png'
   }, {
     id: 3,
@@ -101,6 +107,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.21,
     selling: 22.34,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/Travel/us_capitol-48.png'
   }, {
     id: 4,
@@ -108,6 +116,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.11,
     selling: 22.34,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/statue-48.png'
   }, {
     id: 6,
@@ -115,6 +125,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.21,
     selling: 22.35,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/obelisk-48.png'
   }, {
     id: 7,
@@ -122,6 +134,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.11,
     selling: 22.34,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/monument-48.png'
   }, {
     id: 8,
@@ -129,6 +143,8 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.51,
     selling: 22.74,
+    lat: 0,
+    long: 0,
     icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/modern_statue-48.png'
   }, {
     id: 9,
@@ -136,18 +152,30 @@ app.factory('Shops', function() {
     fee: 'No fee',
     buying: 22.25,
     selling: 22.34,
-    icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/lion_statue-48.png'
+    lat: 0,
+    long: 0,
+    icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/city_hall-48.png'
   }, {
-    id: 3,
+    id: 10,
     name: 'Bank of Canada',
     fee: 'No fee',
     buying: 22.23,
     selling: 22.46,
-    icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/equestrian_statue-48.png'
+    lat: 0,
+    long: 0,
+    icon: 'https://maxcdn.icons8.com/Color/PNG/48/City/embassy-48.png'
   }];
 
   return {
     all: function() {
+      return shops;
+    },
+    nearby: function(lat,long) {
+      for (var i = 0; i < shops.length; i++) {
+        shops[i].lat = lat + (Math.random() - 0.5);
+        shops[i].long = long + (Math.random() - 0.5);
+        // console.log(Math.random() - 0.5);
+      }
       return shops;
     },
     get: function(shopsId) {
